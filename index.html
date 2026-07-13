@@ -184,9 +184,44 @@
     .hero{padding-top:36px;}
     .stage{padding-top:40px;}
   }
+  /* ---------- Password gate ---------- */
+  .gate-overlay{
+    position:fixed; inset:0; z-index:999; background:var(--ink);
+    display:flex; align-items:center; justify-content:center; padding:24px;
+  }
+  .gate-card{
+    background:var(--card); border-radius:var(--radius); padding:36px 32px; max-width:360px; width:100%;
+    text-align:center; box-shadow:0 20px 50px rgba(0,0,0,0.35);
+  }
+  .gate-card h2{font-size:20px; margin-bottom:8px;}
+  .gate-card p{color:var(--ink-muted); font-size:14px; margin:0 0 20px;}
+  .gate-input{
+    width:100%; padding:11px 14px; border-radius:10px; border:1px solid var(--line);
+    font-family:'IBM Plex Sans'; font-size:15px; margin-bottom:12px; box-sizing:border-box;
+  }
+  .gate-input:focus-visible{outline:3px solid var(--teal); outline-offset:1px;}
+  .gate-btn{
+    width:100%; padding:11px 14px; border-radius:999px; border:none; cursor:pointer;
+    background:var(--ink); color:#fff; font-family:'IBM Plex Mono'; font-size:13px; font-weight:500;
+  }
+  .gate-btn:hover{opacity:.85;}
+  .gate-error{color:var(--coral); font-size:13px; margin-top:10px; min-height:16px;}
+  .site-content{display:none;}
 </style>
 </head>
 <body>
+
+<div class="gate-overlay" id="gateOverlay">
+  <div class="gate-card">
+    <h2>The Data Analyst Launchpad</h2>
+    <p>Enter the password to continue.</p>
+    <input type="password" class="gate-input" id="gatePassword" placeholder="Password" autocomplete="off">
+    <button class="gate-btn" id="gateSubmit">Enter</button>
+    <div class="gate-error" id="gateError"></div>
+  </div>
+</div>
+
+<div class="site-content" id="siteContent">
 <a class="skip-link" href="#foundations">Skip to content</a>
 
 <header class="hero" id="top">
@@ -276,8 +311,8 @@
 <nav class="tracker-shell" aria-label="Guide stages">
   <ol class="tracker">
     <li><a href="#foundations" style="--accent-nav:var(--amber); --accent-nav-soft:var(--amber-soft);"><span class="tracker-num">01</span><span class="tracker-label">Foundations</span></a></li>
-    <li><a href="#learn-powerbi" style="--accent-nav:var(--teal); --accent-nav-soft:var(--teal-soft);"><span class="tracker-num">02</span><span class="tracker-label">Learn Power BI</span></a></li>
-    <li><a href="#excel" style="--accent-nav:var(--coral); --accent-nav-soft:var(--coral-soft);"><span class="tracker-num">03</span><span class="tracker-label">Excel</span></a></li>
+    <li><a href="#excel" style="--accent-nav:var(--teal); --accent-nav-soft:var(--teal-soft);"><span class="tracker-num">02</span><span class="tracker-label">Excel</span></a></li>
+    <li><a href="#learn-powerbi" style="--accent-nav:var(--coral); --accent-nav-soft:var(--coral-soft);"><span class="tracker-num">03</span><span class="tracker-label">Learn Power BI</span></a></li>
     <li><a href="#free-training" style="--accent-nav:var(--violet); --accent-nav-soft:var(--violet-soft);"><span class="tracker-num">04</span><span class="tracker-label">Free Training</span></a></li>
     <li><a href="#exam-prep" style="--accent-nav:var(--amber); --accent-nav-soft:var(--amber-soft);"><span class="tracker-num">05</span><span class="tracker-label">Exam Prep</span></a></li>
     <li><a href="#broaden" style="--accent-nav:var(--teal); --accent-nav-soft:var(--teal-soft);"><span class="tracker-num">06</span><span class="tracker-label">Broaden Toolkit</span></a></li>
@@ -362,10 +397,33 @@
     </div>
   </section>
 
-  <!-- STAGE 2 -->
-  <section class="stage stage--teal" id="learn-powerbi">
+  <!-- STAGE 2: EXCEL -->
+  <section class="stage stage--teal" id="excel">
     <div class="stage-head">
       <span class="stage-eyebrow">Stage 02 · 08</span>
+      <h2>Excel</h2>
+      <p class="stage-desc">Power BI leans on Excel habits constantly — formulas, tables, and PivotTables translate almost directly.</p>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">
+        <span class="card-provider">LinkedIn Learning</span>
+        <h4>Excel Essential Training</h4>
+        <p>Excel fundamentals with downloadable exercise files.</p>
+        <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">2–3 hrs</span></div>
+      </a>
+      <a class="card" href="https://alison.com/course/mastering-data-analysis-using-microsoft-excel" target="_blank" rel="noopener">
+        <span class="card-provider">Alison</span>
+        <h4>Excel Data Analysis Mastery</h4>
+        <p>Excel formulas and PivotTables for analysis.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- STAGE 3 -->
+  <section class="stage stage--coral" id="learn-powerbi">
+    <div class="stage-head">
+      <span class="stage-eyebrow">Stage 03 · 08</span>
       <h2>Learn Power BI</h2>
       <p class="stage-desc">Get the software, understand how the pieces fit together, and build your first report.</p>
     </div>
@@ -401,12 +459,6 @@
         <h4>Power BI Fundamentals — PDF export</h4>
         <p>The official fundamentals docs, exported as a saveable PDF.</p>
         <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Reference</span></div>
-      </a>
-      <a class="card" href="https://youtube.com/playlist?list=PLahhVEj9XNTdg4FnhAo_OQ-bSDd86VBcH" target="_blank" rel="noopener">
-        <span class="card-provider">Microsoft · YouTube</span>
-        <h4>PL-300 Official Playlist</h4>
-        <p>Microsoft's own 19-video walkthrough of the exam objectives.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">19 videos</span></div>
       </a>
       <a class="card" href="https://www.youtube.com/results?search_query=Microsoft+Power+BI+official+channel" target="_blank" rel="noopener">
         <span class="card-provider">YouTube</span>
@@ -444,29 +496,6 @@
         <span class="card-provider">Alison</span>
         <h4>Master Microsoft Power BI</h4>
         <p>A full-feature deep dive: Power Query, DAX, time intelligence.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
-      </a>
-    </div>
-  </section>
-
-  <!-- STAGE 3: EXCEL -->
-  <section class="stage stage--coral" id="excel">
-    <div class="stage-head">
-      <span class="stage-eyebrow">Stage 03 · 08</span>
-      <h2>Excel</h2>
-      <p class="stage-desc">Power BI leans on Excel habits constantly — formulas, tables, and PivotTables translate almost directly.</p>
-    </div>
-    <div class="card-grid">
-      <a class="card" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">
-        <span class="card-provider">LinkedIn Learning</span>
-        <h4>Excel Essential Training</h4>
-        <p>Excel fundamentals with downloadable exercise files.</p>
-        <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">2–3 hrs</span></div>
-      </a>
-      <a class="card" href="https://alison.com/course/mastering-data-analysis-using-microsoft-excel" target="_blank" rel="noopener">
-        <span class="card-provider">Alison</span>
-        <h4>Excel Data Analysis Mastery</h4>
-        <p>Excel formulas and PivotTables for analysis.</p>
         <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
       </a>
     </div>
@@ -521,6 +550,12 @@
       <p class="stage-desc">Everything to get exam-ready and get registered — including the discounts worth checking before you pay full price.</p>
     </div>
     <div class="card-grid">
+      <a class="card" href="https://youtube.com/playlist?list=PLahhVEj9XNTdg4FnhAo_OQ-bSDd86VBcH" target="_blank" rel="noopener">
+        <span class="card-provider">Microsoft · YouTube</span>
+        <h4>PL-300 Official Playlist</h4>
+        <p>Microsoft's own 19-video walkthrough of the exam objectives.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">19 videos</span></div>
+      </a>
       <a class="card" href="https://learn.microsoft.com/en-us/training/courses/pl-300t00#course-syllabus" target="_blank" rel="noopener">
         <span class="card-provider">Microsoft Learn</span>
         <h4>PL-300 Course Syllabus</h4>
@@ -807,6 +842,35 @@
       });
     }, { rootMargin: '-40% 0px -55% 0px' });
     sections.forEach(function(s){ obs.observe(s); });
+  })();
+</script>
+</div>
+
+<script>
+  (function(){
+    var PASSWORD = "CommunityRocks";
+    var overlay = document.getElementById('gateOverlay');
+    var content = document.getElementById('siteContent');
+    var input = document.getElementById('gatePassword');
+    var button = document.getElementById('gateSubmit');
+    var error = document.getElementById('gateError');
+
+    function tryUnlock(){
+      if(input.value === PASSWORD){
+        overlay.style.display = 'none';
+        content.style.display = 'block';
+      } else {
+        error.textContent = 'Incorrect password — try again.';
+        input.value = '';
+        input.focus();
+      }
+    }
+
+    button.addEventListener('click', tryUnlock);
+    input.addEventListener('keydown', function(e){
+      if(e.key === 'Enter') tryUnlock();
+    });
+    input.focus();
   })();
 </script>
 </body>
