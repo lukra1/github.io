@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Data Analyst Launchpad — 12 Week Mentorship &amp; Study Guide</title>
+<title>The Data Analyst Launchpad — Mentorship &amp; PL-300 Study Guide</title>
 <meta name="description" content="A friendly mentorship roadmap built from free resources — Microsoft, LinkedIn Learning, Alison, YouTube, and more — covering hands-on labs, portfolio building, and a PL-300 study guide. By Lucrecia Krause, Microsoft MVP.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,21 +44,15 @@
   .skip-link:focus{left:0;}
   a:focus-visible, button:focus-visible{outline:3px solid var(--teal); outline-offset:2px;}
 
-  /* ---------- Top bar ---------- */
-  .topbar{
-    position:sticky; top:0; z-index:50;
-    background:rgba(238,241,246,0.92); backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  .topbar-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 24px;}
-  .brand{font-family:'Space Grotesk'; font-weight:700; font-size:15px; text-decoration:none; white-space:nowrap;}
-  .brand small{display:block; font-family:'IBM Plex Mono'; font-weight:400; font-size:10px; letter-spacing:.08em; color:var(--ink-muted); text-transform:uppercase;}
-
   /* ---------- Hero ---------- */
   .hero{padding:48px 0 0;}
   .eyebrow{
     font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:.10em; text-transform:uppercase;
-    color:var(--teal); font-weight:500; margin-bottom:14px; display:block;
+    color:var(--teal); font-weight:500; margin-bottom:6px; display:block;
+  }
+  .eyebrow-sub{
+    font-family:'IBM Plex Sans'; font-size:14px; color:var(--ink-muted); font-style:italic;
+    display:block; margin-bottom:14px;
   }
   .launchpad-title{font-size:clamp(34px, 6vw, 58px); line-height:1.03; font-weight:700;}
   .launchpad-title span{display:block;}
@@ -71,7 +65,7 @@
   .masthead{background:var(--ink); color:#fff; margin-top:8px;}
   .masthead-grid{
     display:grid; grid-template-columns:1.15fr 1fr; gap:36px; align-items:end;
-    padding:36px 0 0;
+    padding:36px 0 40px;
   }
   .step-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:15px;}
   .step-list li{display:flex; gap:12px; align-items:flex-start;}
@@ -84,12 +78,6 @@
   .step-text span{display:block; font-size:12.5px; color:rgba(255,255,255,0.62); margin-top:1px;}
   .masthead-art{align-self:end;}
   .masthead-art svg{width:100%; height:auto; display:block; max-width:280px; margin-left:auto;}
-  .masthead-byline{
-    padding:22px 0 26px; margin-top:30px; border-top:1px solid rgba(255,255,255,0.14);
-    display:flex; flex-direction:column; gap:2px;
-  }
-  .masthead-byline strong{font-family:'Space Grotesk'; font-size:16px; font-weight:600;}
-  .masthead-byline span{font-size:13px; color:rgba(255,255,255,0.62);}
   @media (max-width:760px){
     .masthead-grid{grid-template-columns:1fr;}
     .masthead-art{order:-1; max-width:200px; margin:0 auto 8px;}
@@ -112,7 +100,7 @@
 
   /* ---------- Stage tracker (signature nav) ---------- */
   .tracker-shell{
-    position:sticky; top:57px; z-index:40;
+    position:sticky; top:0; z-index:40;
     background:rgba(238,241,246,0.96); backdrop-filter:blur(6px);
     border-bottom:1px solid var(--line);
     padding:14px 0;
@@ -138,7 +126,7 @@
   .tracker-label{font-size:13px; font-weight:500;}
 
   /* ---------- Stage sections ---------- */
-  .stage{padding:56px 0 12px; scroll-margin-top:130px;}
+  .stage{padding:56px 0 12px; scroll-margin-top:70px;}
   .stage-head{max-width:70ch; margin-bottom:28px;}
   .stage-eyebrow{
     font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:.08em; text-transform:uppercase;
@@ -177,6 +165,7 @@
   .stage--teal{--accent:var(--teal); --accent-soft:var(--teal-soft);}
   .stage--coral{--accent:var(--coral); --accent-soft:var(--coral-soft);}
   .stage--violet{--accent:var(--violet); --accent-soft:var(--violet-soft);}
+  .stage--slate{--accent:var(--ink-muted); --accent-soft:rgba(87,101,126,0.13);}
 
   .note{
     font-size:13px; color:var(--ink-muted); background:var(--card); border:1px dashed var(--line);
@@ -200,15 +189,10 @@
 <body>
 <a class="skip-link" href="#foundations">Skip to content</a>
 
-<div class="topbar">
-  <div class="topbar-inner wrap" style="padding-left:0; padding-right:0;">
-    <a class="brand" href="#top">The Data Analyst Launchpad<small>Mentorship &amp; PL-300 Study Guide</small></a>
-  </div>
-</div>
-
 <header class="hero" id="top">
   <div class="wrap">
     <span class="eyebrow">Mentorship Program for the Data Analyst</span>
+    <span class="eyebrow-sub">A free resources guide for self-paced learning, user group study groups, course companion, and certification preparation</span>
     <h1 class="launchpad-title"><span class="ink-line">The Data Analyst</span><span class="blue-line">Launchpad</span></h1>
     <p class="lede">A friendly mentorship roadmap built from free resources — Microsoft, LinkedIn Learning,
       Alison, YouTube, and more — covering hands-on labs, portfolio building, and a PL&#8209;300 study guide.</p>
@@ -274,11 +258,6 @@
           </g>
         </svg>
       </div>
-
-      <div class="masthead-byline">
-        <strong>Lucrecia Krause, Exec MBA, PMP</strong>
-        <span>Microsoft MVP — Data Platform, Power BI &amp; Fabric</span>
-      </div>
     </div>
   </div>
 
@@ -298,23 +277,55 @@
   <ol class="tracker">
     <li><a href="#foundations" style="--accent-nav:var(--amber); --accent-nav-soft:var(--amber-soft);"><span class="tracker-num">01</span><span class="tracker-label">Foundations</span></a></li>
     <li><a href="#learn-powerbi" style="--accent-nav:var(--teal); --accent-nav-soft:var(--teal-soft);"><span class="tracker-num">02</span><span class="tracker-label">Learn Power BI</span></a></li>
-    <li><a href="#free-training" style="--accent-nav:var(--coral); --accent-nav-soft:var(--coral-soft);"><span class="tracker-num">03</span><span class="tracker-label">Free Training</span></a></li>
-    <li><a href="#exam-prep" style="--accent-nav:var(--violet); --accent-nav-soft:var(--violet-soft);"><span class="tracker-num">04</span><span class="tracker-label">Exam Prep</span></a></li>
-    <li><a href="#broaden" style="--accent-nav:var(--amber); --accent-nav-soft:var(--amber-soft);"><span class="tracker-num">05</span><span class="tracker-label">Broaden Toolkit</span></a></li>
-    <li><a href="#labs" style="--accent-nav:var(--teal); --accent-nav-soft:var(--teal-soft);"><span class="tracker-num">06</span><span class="tracker-label">Labs &amp; Data</span></a></li>
-    <li><a href="#portfolio" style="--accent-nav:var(--coral); --accent-nav-soft:var(--coral-soft);"><span class="tracker-num">07</span><span class="tracker-label">Portfolio &amp; Credit</span></a></li>
+    <li><a href="#excel" style="--accent-nav:var(--coral); --accent-nav-soft:var(--coral-soft);"><span class="tracker-num">03</span><span class="tracker-label">Excel</span></a></li>
+    <li><a href="#free-training" style="--accent-nav:var(--violet); --accent-nav-soft:var(--violet-soft);"><span class="tracker-num">04</span><span class="tracker-label">Free Training</span></a></li>
+    <li><a href="#exam-prep" style="--accent-nav:var(--amber); --accent-nav-soft:var(--amber-soft);"><span class="tracker-num">05</span><span class="tracker-label">Exam Prep</span></a></li>
+    <li><a href="#broaden" style="--accent-nav:var(--teal); --accent-nav-soft:var(--teal-soft);"><span class="tracker-num">06</span><span class="tracker-label">Broaden Toolkit</span></a></li>
+    <li><a href="#labs" style="--accent-nav:var(--coral); --accent-nav-soft:var(--coral-soft);"><span class="tracker-num">07</span><span class="tracker-label">Labs &amp; Data</span></a></li>
+    <li><a href="#portfolio" style="--accent-nav:var(--violet); --accent-nav-soft:var(--violet-soft);"><span class="tracker-num">08</span><span class="tracker-label">Portfolio &amp; Credit</span></a></li>
   </ol>
 </nav>
 
 <main class="wrap">
 
+  <!-- BEFORE STAGE 1: ORIENTATION READING -->
+  <section class="stage stage--slate" id="orientation">
+    <div class="stage-head">
+      <span class="stage-eyebrow">Before You Begin</span>
+      <h2>Introduction</h2>
+      <p class="stage-desc">A few short reads on what data analysis actually is, how BI tools get evaluated, and what the job really expects of you — good context before Stage 1.</p>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="https://www.simplilearn.com/data-analysis-methods-process-types-article" target="_blank" rel="noopener">
+        <span class="card-provider">Simplilearn</span>
+        <h4>What Is Data Analysis?</h4>
+        <p>Examples, types, and applications — a clear starting definition.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">~10 min read</span></div>
+      </a>
+      <a class="card" href="https://community.fabric.microsoft.com/t5/Power-BI-Updates-Blog/Microsoft-named-a-Leader-in-the-2026-Gartner-Magic-Quadrant-for/ba-p/5262403" target="_blank" rel="noopener">
+        <span class="card-provider">Microsoft</span>
+        <h4>The Gartner Magic Quadrant, Explained</h4>
+        <p>Why Power BI's position on this chart matters when comparing BI tools.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">~8 min read</span></div>
+      </a>
+      <a class="card" href="https://www.coursera.org/articles/what-does-a-data-analyst-do-a-career-guide" target="_blank" rel="noopener">
+        <span class="card-provider">Coursera</span>
+        <h4>What Does a Data Analyst Do?</h4>
+        <p>The skills, day-to-day work, and career path — a realistic preview of the role.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">~10 min read</span></div>
+      </a>
+    </div>
+  </section>
+
   <!-- STAGE 1 -->
   <section class="stage stage--amber" id="foundations">
     <div class="stage-head">
-      <span class="stage-eyebrow">Stage 01 · 07</span>
+      <span class="stage-eyebrow">Stage 01 · 08</span>
       <h2>Learning Foundations</h2>
-      <p class="stage-desc">Set up your account, understand what the exam covers, and get oriented before you dive in.</p>
+      <p class="stage-desc">This guide uses a variety of free learning resources and publicly available datasets. To follow along, you'll need to create free accounts on the following platforms:</p>
     </div>
+
+    <p class="group-label">Create Your Free Accounts</p>
     <div class="card-grid">
       <a class="card" href="https://learn.microsoft.com/en-us/training/support/learn-profile-manage" target="_blank" rel="noopener">
         <span class="card-provider">Microsoft Learn</span>
@@ -322,23 +333,31 @@
         <p>Set up your account to track modules, badges, and progress.</p>
         <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">5 min</span></div>
       </a>
-      <a class="card" href="https://learn.microsoft.com/en-us/training/courses/pl-300t00#course-syllabus" target="_blank" rel="noopener">
-        <span class="card-provider">Microsoft Learn</span>
-        <h4>PL-300 Course Syllabus</h4>
-        <p>The full topic breakdown for the official PL-300T00 course.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
+      <a class="card" href="https://www.kaggle.com/account/login?phase=startRegisterTab" target="_blank" rel="noopener">
+        <span class="card-provider">Kaggle</span>
+        <h4>Create a Kaggle account</h4>
+        <p>Sign up free to access datasets, notebooks, and competitions for later practice.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">2 min</span></div>
       </a>
-      <a class="card" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-300" target="_blank" rel="noopener">
-        <span class="card-provider">Microsoft</span>
-        <h4>PL-300 Exam Study Guide</h4>
-        <p>Skills measured and exam weights, straight from Microsoft.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Reference doc</span></div>
+      <a class="card" href="https://alison.com/register" target="_blank" rel="noopener">
+        <span class="card-provider">Alison</span>
+        <h4>Create an Alison account</h4>
+        <p>Sign up free to enrol in any of Alison's free courses later in this guide.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">2 min</span></div>
       </a>
-      <a class="card" href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/" target="_blank" rel="noopener">
-        <span class="card-provider">Microsoft</span>
-        <h4>PL-300 Certification Page</h4>
-        <p>The official exam overview — what it covers and how it's structured.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">10 min</span></div>
+      <a class="card" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">
+        <span class="card-provider">LinkedIn Learning</span>
+        <h4>Sign up for LinkedIn Learning</h4>
+        <p>Create an account so you're ready for the courses later in this guide.</p>
+        <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">2 min</span></div>
+      </a>
+      <a class="card" href="https://www.linkedin.com/learning-login/go/ocls" target="_blank" rel="noopener">
+        <span class="card-provider">LinkedIn + Library</span>
+        <h4>Get LinkedIn Learning free via your library</h4>
+        <p>Most public libraries include free LinkedIn Learning access — check your library's website for a
+          "LinkedIn Learning" link and sign in with your library card number. If you're in Orange County, FL,
+          use this direct link instead.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span></div>
       </a>
     </div>
   </section>
@@ -346,10 +365,12 @@
   <!-- STAGE 2 -->
   <section class="stage stage--teal" id="learn-powerbi">
     <div class="stage-head">
-      <span class="stage-eyebrow">Stage 02 · 07</span>
+      <span class="stage-eyebrow">Stage 02 · 08</span>
       <h2>Learn Power BI</h2>
       <p class="stage-desc">Get the software, understand how the pieces fit together, and build your first report.</p>
     </div>
+
+    <p class="group-label">Microsoft's Own Resources</p>
     <div class="card-grid">
       <a class="card" href="https://learn.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview" target="_blank" rel="noopener">
         <span class="card-provider">Microsoft Learn</span>
@@ -394,12 +415,67 @@
         <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Ongoing</span></div>
       </a>
     </div>
+
+    <p class="group-label">LinkedIn Learning (Free via US Library Systems)</p>
+    <div class="card-grid">
+      <a class="card" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">
+        <span class="card-provider">LinkedIn Learning</span>
+        <h4>Power BI Essential Training</h4>
+        <p>A solid Power BI fundamentals course.</p>
+        <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">3h 34m</span></div>
+      </a>
+      <a class="card" href="https://www.linkedin.com/learning/paths/explore-a-career-as-a-power-bi-specialist" target="_blank" rel="noopener">
+        <span class="card-provider">LinkedIn Learning</span>
+        <h4>Power BI Specialist Path</h4>
+        <p>A 5-course career path for going deeper on Power BI.</p>
+        <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">~18 hrs</span></div>
+      </a>
+    </div>
+
+    <p class="group-label">Alison</p>
+    <div class="card-grid">
+      <a class="card" href="https://alison.com/course/introduction-to-data-analytics-using-microsoft-power-bi" target="_blank" rel="noopener">
+        <span class="card-provider">Alison</span>
+        <h4>Intro to Power BI Analytics</h4>
+        <p>Power BI basics — accounts, imports, first visuals.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
+      </a>
+      <a class="card" href="https://alison.com/course/master-microsoft-power-bi" target="_blank" rel="noopener">
+        <span class="card-provider">Alison</span>
+        <h4>Master Microsoft Power BI</h4>
+        <p>A full-feature deep dive: Power Query, DAX, time intelligence.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
+      </a>
+    </div>
   </section>
 
-  <!-- STAGE 3 -->
-  <section class="stage stage--coral" id="free-training">
+  <!-- STAGE 3: EXCEL -->
+  <section class="stage stage--coral" id="excel">
     <div class="stage-head">
-      <span class="stage-eyebrow">Stage 03 · 07</span>
+      <span class="stage-eyebrow">Stage 03 · 08</span>
+      <h2>Excel</h2>
+      <p class="stage-desc">Power BI leans on Excel habits constantly — formulas, tables, and PivotTables translate almost directly.</p>
+    </div>
+    <div class="card-grid">
+      <a class="card" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">
+        <span class="card-provider">LinkedIn Learning</span>
+        <h4>Excel Essential Training</h4>
+        <p>Excel fundamentals with downloadable exercise files.</p>
+        <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">2–3 hrs</span></div>
+      </a>
+      <a class="card" href="https://alison.com/course/mastering-data-analysis-using-microsoft-excel" target="_blank" rel="noopener">
+        <span class="card-provider">Alison</span>
+        <h4>Excel Data Analysis Mastery</h4>
+        <p>Excel formulas and PivotTables for analysis.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- STAGE 4 -->
+  <section class="stage stage--violet" id="free-training">
+    <div class="stage-head">
+      <span class="stage-eyebrow">Stage 04 · 08</span>
       <h2>Free Microsoft Training</h2>
       <p class="stage-desc">Structured, instructor-backed and self-paced training — including the adjacent skills (Python, SQL) analysts lean on daily.</p>
     </div>
@@ -437,14 +513,32 @@
     </div>
   </section>
 
-  <!-- STAGE 4 -->
-  <section class="stage stage--violet" id="exam-prep">
+  <!-- STAGE 5 -->
+  <section class="stage stage--amber" id="exam-prep">
     <div class="stage-head">
-      <span class="stage-eyebrow">Stage 04 · 07</span>
+      <span class="stage-eyebrow">Stage 05 · 08</span>
       <h2>Exam Preparation</h2>
       <p class="stage-desc">Everything to get exam-ready and get registered — including the discounts worth checking before you pay full price.</p>
     </div>
     <div class="card-grid">
+      <a class="card" href="https://learn.microsoft.com/en-us/training/courses/pl-300t00#course-syllabus" target="_blank" rel="noopener">
+        <span class="card-provider">Microsoft Learn</span>
+        <h4>PL-300 Course Syllabus</h4>
+        <p>The full topic breakdown for the official PL-300T00 course.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
+      </a>
+      <a class="card" href="https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/pl-300" target="_blank" rel="noopener">
+        <span class="card-provider">Microsoft</span>
+        <h4>PL-300 Exam Study Guide</h4>
+        <p>Skills measured and exam weights, straight from Microsoft.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Reference doc</span></div>
+      </a>
+      <a class="card" href="https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/" target="_blank" rel="noopener">
+        <span class="card-provider">Microsoft</span>
+        <h4>PL-300 Certification Page</h4>
+        <p>The official exam overview — what it covers and how it's structured.</p>
+        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">10 min</span></div>
+      </a>
       <a class="card" href="https://aka.ms/pbi10/cert50" target="_blank" rel="noopener">
         <span class="card-provider">Microsoft Reactor</span>
         <h4>"Get Certified" PL-300 Reactor Series</h4>
@@ -496,12 +590,12 @@
     </div>
   </section>
 
-  <!-- STAGE 5 -->
-  <section class="stage stage--amber" id="broaden">
+  <!-- STAGE 6 -->
+  <section class="stage stage--teal" id="broaden">
     <div class="stage-head">
-      <span class="stage-eyebrow">Stage 05 · 07</span>
+      <span class="stage-eyebrow">Stage 06 · 08</span>
       <h2>Broaden Your Toolkit</h2>
-      <p class="stage-desc">Once the Microsoft path feels familiar, these platforms round out your skills and give you a second BI tool (Tableau) that many employers also ask for.</p>
+      <p class="stage-desc">Round out the general data-analysis and SQL skills that complement everything you've learned so far.</p>
     </div>
 
     <p class="group-label">LinkedIn Learning</p>
@@ -520,18 +614,6 @@
       </a>
       <a class="card" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">
         <span class="card-provider">LinkedIn Learning</span>
-        <h4>Power BI Essential Training</h4>
-        <p>A solid Power BI fundamentals course.</p>
-        <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">3h 34m</span></div>
-      </a>
-      <a class="card" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">
-        <span class="card-provider">LinkedIn Learning</span>
-        <h4>Excel Essential Training</h4>
-        <p>Excel fundamentals with downloadable exercise files.</p>
-        <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">2–3 hrs</span></div>
-      </a>
-      <a class="card" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">
-        <span class="card-provider">LinkedIn Learning</span>
         <h4>Learning Data Analytics</h4>
         <p>Core data-analytics workflow foundations.</p>
         <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">3h 29m</span></div>
@@ -542,23 +624,11 @@
         <p>SQL fundamentals with practice databases.</p>
         <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">4h 36m</span></div>
       </a>
-      <a class="card" href="https://www.linkedin.com/learning/paths/explore-a-career-as-a-power-bi-specialist" target="_blank" rel="noopener">
-        <span class="card-provider">LinkedIn Learning</span>
-        <h4>Power BI Specialist Path</h4>
-        <p>A 5-course career path for going deeper on Power BI.</p>
-        <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">~18 hrs</span></div>
-      </a>
       <a class="card" href="https://www.linkedin.com/learning/" target="_blank" rel="noopener">
         <span class="card-provider">LinkedIn Learning</span>
         <h4>Developing Data Fluency</h4>
         <p>Robin Hunt's course on thinking clearly with data.</p>
         <div class="card-meta"><span class="chip chip-paid">Subscription</span><span class="card-duration">A few hours</span></div>
-      </a>
-      <a class="card" href="https://www.linkedin.com/learning-login/go/ocls" target="_blank" rel="noopener">
-        <span class="card-provider">LinkedIn + Library</span>
-        <h4>Free Access via OCLS</h4>
-        <p>Free LinkedIn Learning access with an Orange County Library card.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span></div>
       </a>
     </div>
 
@@ -574,24 +644,6 @@
         <span class="card-provider">Alison</span>
         <h4>Intro to Data Analysis</h4>
         <p>Process management plus four core data-analysis tools.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
-      </a>
-      <a class="card" href="https://alison.com/course/mastering-data-analysis-using-microsoft-excel" target="_blank" rel="noopener">
-        <span class="card-provider">Alison</span>
-        <h4>Excel Data Analysis Mastery</h4>
-        <p>Excel formulas and PivotTables for analysis.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
-      </a>
-      <a class="card" href="https://alison.com/course/introduction-to-data-analytics-using-microsoft-power-bi" target="_blank" rel="noopener">
-        <span class="card-provider">Alison</span>
-        <h4>Intro to Power BI Analytics</h4>
-        <p>Power BI basics — accounts, imports, first visuals.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
-      </a>
-      <a class="card" href="https://alison.com/course/master-microsoft-power-bi" target="_blank" rel="noopener">
-        <span class="card-provider">Alison</span>
-        <h4>Master Microsoft Power BI</h4>
-        <p>A full-feature deep dive: Power Query, DAX, time intelligence.</p>
         <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
       </a>
       <a class="card" href="https://alison.com/course/sql-server-for-data-analysis" target="_blank" rel="noopener">
@@ -613,46 +665,12 @@
         <div class="card-meta"><span class="chip chip-free">Free</span></div>
       </a>
     </div>
-
-    <p class="group-label">Tableau</p>
-    <div class="card-grid">
-      <a class="card" href="https://public.tableau.com" target="_blank" rel="noopener">
-        <span class="card-provider">Tableau</span>
-        <h4>Tableau Public</h4>
-        <p>The free version of Tableau Desktop.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Ongoing</span></div>
-      </a>
-      <a class="card" href="https://www.tableau.com/learn/training/elearning" target="_blank" rel="noopener">
-        <span class="card-provider">Tableau</span>
-        <h4>Tableau eLearning</h4>
-        <p>Self-paced video training from Tableau itself.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Self-paced</span></div>
-      </a>
-      <a class="card" href="https://www.tableau.com/blog/tableau-for-teaching-free-access-resources-teach-tableau" target="_blank" rel="noopener">
-        <span class="card-provider">Tableau</span>
-        <h4>Tableau for Teaching</h4>
-        <p>Free access for students and educators.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">1-yr license</span></div>
-      </a>
-      <a class="card" href="https://www.youtube.com/results?search_query=Tableau+official+channel" target="_blank" rel="noopener">
-        <span class="card-provider">YouTube</span>
-        <h4>Tableau YouTube Channel</h4>
-        <p>Official tutorials, straight from Tableau.</p>
-        <div class="card-meta"><span class="chip chip-free">Free</span><span class="card-duration">Ongoing</span></div>
-      </a>
-      <a class="card" href="https://www.tableau.com/learn/certification/desktop-specialist" target="_blank" rel="noopener">
-        <span class="card-provider">Tableau</span>
-        <h4>Desktop Specialist Exam</h4>
-        <p>Entry-level Tableau certification — a nice complement to PL-300.</p>
-        <div class="card-meta"><span class="chip chip-paid">$100</span><span class="card-duration">60 min</span></div>
-      </a>
-    </div>
   </section>
 
-  <!-- STAGE 6 -->
-  <section class="stage stage--teal" id="labs">
+  <!-- STAGE 7 -->
+  <section class="stage stage--coral" id="labs">
     <div class="stage-head">
-      <span class="stage-eyebrow">Stage 06 · 07</span>
+      <span class="stage-eyebrow">Stage 07 · 08</span>
       <h2>Practice with Labs &amp; Real Data</h2>
       <p class="stage-desc">Reading is not the same as building. These real datasets give you something concrete to practice on.</p>
     </div>
@@ -697,10 +715,10 @@
     </div>
   </section>
 
-  <!-- STAGE 7 -->
-  <section class="stage stage--coral" id="portfolio">
+  <!-- STAGE 8 -->
+  <section class="stage stage--violet" id="portfolio">
     <div class="stage-head">
-      <span class="stage-eyebrow">Stage 07 · 07</span>
+      <span class="stage-eyebrow">Stage 08 · 08</span>
       <h2>Portfolio, Credit &amp; Soft Skills</h2>
       <p class="stage-desc">Show your work, pick up college credit along the way, and round out the communication skills that get you hired.</p>
     </div>
